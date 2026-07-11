@@ -9,6 +9,13 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
+app.get("/test", (req, res) => {
+  res.json({
+    dirname: __dirname,
+    cwd: process.cwd(),
+  });
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
