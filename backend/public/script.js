@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3001");
+const socket = io("https://realtime-whiteboard-production-155f.up.railway.app");
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -61,8 +61,7 @@ socket.on('clear', () => {
 })
 */
 
-clearBtn.addEventListener('click', () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+clearBtn.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   /*socket.emit('clear')*/
-})
-
+});
